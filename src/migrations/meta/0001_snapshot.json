@@ -1,0 +1,76 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "a2b55f8c-6fa1-4a5a-89c7-08919abd7aea",
+  "prevId": "abcbfcbb-4b32-4e8c-82b2-c5f5941b1dc5",
+  "tables": {
+    "measurement_types": {
+      "name": "measurement_types",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nameF": {
+          "name": "nameF",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "measureCategory": {
+          "name": "measureCategory",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "measureCode": {
+          "name": "measureCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "unit": {
+          "name": "unit",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "measurement_types_measureCode_unique": {
+          "name": "measurement_types_measureCode_unique",
+          "columns": [
+            "measureCode"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}

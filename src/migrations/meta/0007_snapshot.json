@@ -1,0 +1,422 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "9254e3c0-381b-4b12-bfab-1a3cd028c4f8",
+  "prevId": "948457a6-5975-4792-886f-bcb2daadeedb",
+  "tables": {
+    "food_groups": {
+      "name": "food_groups",
+      "columns": {
+        "groupId": {
+          "name": "groupId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "groupCode": {
+          "name": "groupCode",
+          "type": "text(15)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "groupName": {
+          "name": "groupName",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "groupNameF": {
+          "name": "groupNameF",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "food_names": {
+      "name": "food_names",
+      "columns": {
+        "foodId": {
+          "name": "foodId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "foodCode": {
+          "name": "foodCode",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "groupId": {
+          "name": "groupId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "foodName": {
+          "name": "foodName",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "foodNameF": {
+          "name": "foodNameF",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "scientificName": {
+          "name": "scientificName",
+          "type": "text(155)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "foodSource": {
+          "name": "foodSource",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "foodOrigin": {
+          "name": "foodOrigin",
+          "type": "text(100)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "foodNutrients": {
+          "name": "foodNutrients",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "foodCodeIndex": {
+          "name": "foodCodeIndex",
+          "columns": [
+            "foodCode"
+          ],
+          "isUnique": false
+        },
+        "groupIdIndex": {
+          "name": "groupIdIndex",
+          "columns": [
+            "groupId"
+          ],
+          "isUnique": false
+        },
+        "foodNameIndex": {
+          "name": "foodNameIndex",
+          "columns": [
+            "foodName"
+          ],
+          "isUnique": false
+        },
+        "foodNameFIndex": {
+          "name": "foodNameFIndex",
+          "columns": [
+            "foodNameF"
+          ],
+          "isUnique": false
+        },
+        "foodIdIndex": {
+          "name": "foodIdIndex",
+          "columns": [
+            "foodId"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {
+        "food_names_groupId_food_groups_groupId_fk": {
+          "name": "food_names_groupId_food_groups_groupId_fk",
+          "tableFrom": "food_names",
+          "tableTo": "food_groups",
+          "columnsFrom": [
+            "groupId"
+          ],
+          "columnsTo": [
+            "groupId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "meals_categories": {
+      "name": "meals_categories",
+      "columns": {
+        "categoryId": {
+          "name": "categoryId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text(200)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nameF": {
+          "name": "nameF",
+          "type": "text(200)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "meals_types": {
+      "name": "meals_types",
+      "columns": {
+        "typeId": {
+          "name": "typeId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nameF": {
+          "name": "nameF",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "nutrient_names": {
+      "name": "nutrient_names",
+      "columns": {
+        "nutrientId": {
+          "name": "nutrientId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "nutrientCode": {
+          "name": "nutrientCode",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nutrientName": {
+          "name": "nutrientName",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nutrientNameF": {
+          "name": "nutrientNameF",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nutrientUnit": {
+          "name": "nutrientUnit",
+          "type": "text(5)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nutrientSymbol": {
+          "name": "nutrientSymbol",
+          "type": "text(10)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "tagname": {
+          "name": "tagname",
+          "type": "text(20)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nutrientDecimal": {
+          "name": "nutrientDecimal",
+          "type": "text(15)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "nutrientIdIndex": {
+          "name": "nutrientIdIndex",
+          "columns": [
+            "nutrientId"
+          ],
+          "isUnique": false
+        },
+        "tagnameIndex": {
+          "name": "tagnameIndex",
+          "columns": [
+            "tagname"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "recipes": {
+      "name": "recipes",
+      "columns": {
+        "recipeId": {
+          "name": "recipeId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "nameF": {
+          "name": "nameF",
+          "type": "text(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "categoryId": {
+          "name": "categoryId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "typeId": {
+          "name": "typeId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ingredients": {
+          "name": "ingredients",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "preparationMethod": {
+          "name": "preparationMethod",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "cookingTime": {
+          "name": "cookingTime",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "quantity": {
+          "name": "quantity",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "recipes_categoryId_meals_categories_categoryId_fk": {
+          "name": "recipes_categoryId_meals_categories_categoryId_fk",
+          "tableFrom": "recipes",
+          "tableTo": "meals_categories",
+          "columnsFrom": [
+            "categoryId"
+          ],
+          "columnsTo": [
+            "categoryId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "recipes_typeId_meals_types_typeId_fk": {
+          "name": "recipes_typeId_meals_types_typeId_fk",
+          "tableFrom": "recipes",
+          "tableTo": "meals_types",
+          "columnsFrom": [
+            "typeId"
+          ],
+          "columnsTo": [
+            "typeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}
